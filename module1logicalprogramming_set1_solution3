@@ -1,9 +1,6 @@
-The statement char ch = ‘A’ would store in ch
-(1) The character A
-(2) ASCII value of A
-(3) A along with the single inverted commas
-(4) Both (1) and (2)
+Evaluate the following expression and identify the order in which the expression will be evaluated.
+(a) result = age / 2 + age * 4 / age - age + month / 3 ;
+(month = 5.5, age = 3, assume result to be a float)
 
 ANS:
-
-  4)Both (1) and (2)
+  3.83333
