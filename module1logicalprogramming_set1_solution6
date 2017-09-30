@@ -1,0 +1,39 @@
+#include<stdio.h>
+//function declaration
+int sum(long int numbers)
+  {
+	int remainder,sum=0;
+while(numbers)
+ {
+// calculating the sum of n numbers
+	remainder=numbers%10;
+	sum=sum+remainder;
+	numbers=numbers/10;
+ }
+	return sum;
+  }
+void getinput()
+ {
+	long int numbers,value,result;	
+	printf("Enter the n numbers");
+	value=scanf("%ld",&numbers);
+if(value>0)
+ {
+//function calling statement
+	result=sum(numbers);
+	printf("%ld",result);
+ }
+else if(value1!=1)
+ {
+	printf("Enter the positive integer");
+	scanf(%s");
+//recall the function if the user entered charecter instead of integer
+	getinput();
+ }
+}
+//main function
+void main()
+  {
+//function calling statement
+	getinput();
+  }
