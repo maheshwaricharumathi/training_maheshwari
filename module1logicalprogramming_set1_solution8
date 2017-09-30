@@ -1,0 +1,70 @@
+#include<stdio.h>
+//function declaration
+int getinput()
+  {
+//variabes declaration in the function
+	int userid[6]={1,2,3,4,5}.position,option=3,variable,user_id,password,value1,value2;
+	int password[6]={123,345,567,678,789};
+clrscr();
+//getting input from the user
+	printf("enter the user id");
+	value1=scanf("%d",&user_id);
+//checking negative cases
+if(value1>0)
+ {
+for(i=0;i<userid[i];i++)
+ {
+if(userid[i]==user_id)
+  {
+	position=i;
+	break;
+   }
+  } 
+ }
+else if(val1!=1)
+  {
+	printf("Enter the positive integer");
+	scanf("%s");
+//recall the function
+	getinput();
+  }
+//getting password from the user
+	printf("Enter the password");
+	value2=scanf("%d",&password);
+if(value2>0)
+	i=position;
+while(1)
+if(password[i]==password)
+  {
+	printf("welcome user %d",user_id);
+	break;
+  }
+else if(val2!=1)
+  {
+	Printf("Enter the integer value");
+	scanf("%s");
+//recall the function if user entered char instead of integer
+        getinput();
+  }
+else
+  {
+if(option!=0)
+    {
+//re entering the password
+	printf("password wrong u have %d options",option);
+	scanf("%d",&password);
+	option--;
+    }
+else
+   {
+	printf("your 3 attempts are failed try again after some time");
+	break;
+    }
+  }
+return 0;
+  } 
+//main function
+void main()
+  { 
+	getinput();
+  }
