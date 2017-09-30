@@ -1,0 +1,77 @@
+#include<stdio.h>
+#include<conio.h>
+//main function
+void main()
+ {
+//variables declaration
+	int no_of_years;
+	float principle_amount,rate_of_intrest,simple_intrest;
+//getting input from the user via using function
+	printf(“Enter the principle amount”);
+	principle_amount=get_principle_amount;
+	printf(“Enter the rate of intrest”);
+	rate_of_intrest=get_rate_of_intrest;
+	printf(“Enter the no of years”);
+	no_of_years=get_no_of_years;
+	simple_intrest=calculate_simple_intrest(principle_amount,rate_of_intrest,no_of_years)
+	printf("simple intrest is %.2f",simple_intrest);
+	getch();
+ }
+
+int get_principle_amount()
+  {
+	float principle_amount,value1;
+	value=scanf("%f",&principle_amount);
+if(value!=1)
+ {
+	printf("Enter valid integer number");
+	scanf("%s");
+	principle_amount=get_principle_amount();
+ }
+else if(value<0)
+  {
+	printf("Enter positive integer value");
+	principle_amount=get_principle_amount();
+  }
+	return principle_amount;
+ }
+int get_rate_of_intrest();
+ {
+	float rate_of_intrest,value;
+	value=scanf("%f",&rate_of_intrest);
+if(value!=1)
+ {
+	printf("Enter the valid integer value");
+	scanf("%s");
+	rate_of_intrest=get_rate_of_intrest();
+}
+else if(value<0)
+{
+	printf("Enter the positive value");
+	rate_of_intrest=get_rate_of_intrest();
+}
+	return rate_of_intrest;
+}
+int get_no_of_years()
+ {
+	int no_of_years,value;
+	value=scanf("%d",&no_of_year);
+if(value!=1)
+ {
+	printf("enter the valid integer value");
+	scanf("%s");
+	no_of_year=get_no_of_years();
+ }
+else if(value<0)
+{
+	printf("Enter the positive integer value");
+	no_of_year=get_no_of_years();
+}
+	return no_of_year;
+}
+int calculate_simple_intrest(int principle_amount,int rate_of_intrest,int no_of_intrest)
+{
+return(principle_amount*rate_of_intrest*no_of_intrest)/100;
+}
+	
+
