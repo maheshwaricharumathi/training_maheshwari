@@ -1,0 +1,46 @@
+#include<stdio.h>
+//function declaration
+int oddeven(int digit)
+ {
+//variable declaration in function
+	int value,result=0;
+for(value=1;value<=digit;value++)
+ {
+	if(value%2==0)
+	result=result+2;
+else if(value!=1)
+	result=result+1;
+else
+	result=result+1;
+	printf("%d",result);
+ }
+return 0;
+ }
+//main function
+	int main()
+{
+	getinput();
+}
+int getinput()
+{
+//variable declaration in function
+	int digit,result,number;
+	printf("enter the digit");
+//getting input from the user
+	number=scanf("%d",&digit);
+//checking negative cases
+if(number>0)
+ {
+//function calling
+	oddeven(digit);
+}
+else if(number!=1)
+ {
+	printf("Enter the positive integer");
+	scanf("%s");
+//recall the fuction if user enter char instead of integer
+	getinput();
+}
+}
+return 0;
+}
