@@ -1,0 +1,50 @@
+#include<stdio.h>
+//function declaration
+int note(int withdraw_amount)
+ {
+//variables declaration
+	int hundreds,fiftys,tens;
+if(withdraw_amount>=100)
+ {
+	hundreds=withdraw_amount/100;
+	withdraw_amount=withdraw_amount-(hundreds*100);
+  }
+if(withdraw_amount>=50)
+  {
+	fiftys=withdraw_amount/50;
+	withdraw_amount=withdraw_amount-(fiftys*50);
+  } 
+if(withdraw_amount==0)
+  {
+	printf("The 100's are:%d\n50's are\n:%d\n10's are\n:%d",hundreds,fiftys,tens);
+   }
+else
+  {
+	printf("The amount cannot be dispatched");
+   }
+return 0;
+ }
+/ /input getting from the user using function 
+void getinput()
+  {
+	int withdraw_amount,value1;
+	printf("Enter the withdraw amount");
+	value1=scanf("%d",&withdraw_amount);
+//& negative case user input checking statement
+if(value1>0)
+  {
+	note(withdraw_amount);
+  } 
+else if (value!=1)
+  {
+	printf("Eneter the positive integer");
+	scanf("%s");
+	getinput();
+  }
+ }
+//main function
+void main()
+  {
+//function calling
+	getinput();
+  }
