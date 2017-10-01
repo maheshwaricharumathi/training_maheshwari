@@ -1,0 +1,131 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct emp
+    {
+char emp_name;
+char emp_designation;
+int emp_mbl_no;
+   };
+int count=0;
+void add_rec(char *a);
+void display(char *a);
+void update_rec(char *a);
+void main(char *argv[])
+     {
+int choice;
+while(1)
+  {
+printf("Menu:\n");
+printf("1.Add a record\n");
+printf("2.display a record\n");
+printf("3.update the record\n");
+scanf("%d",&choice);
+switch(choice)
+  {
+case 1:
+add_rec(argv[1]);
+break;
+case 2:
+display(argv[1]);
+break;
+case 3:
+update_rec(argv[1]);
+break;
+case 4:
+exit(0);
+default:
+    {
+printf("wroung choice!!!\n Enter the correct choice\n");
+    }
+  }
+void add_rec(char *a)
+  {
+FILE *fp;
+fp=fopen(employee.txt,"a+");
+struct emp*temp=(struct emp*)malloc(sizeof(struct emp));
+temp->name=(char *)malloc (50*sizeof(char));
+if(fp==NULL)
+printf("Error");
+else
+   {
+printf("Enter the employee name");
+scanf("%[^\n]s",&temp->emp_name);
+fwrite(&temp->emp_name,50,1,fp);
+printf("Enter the emp designation");
+scanf("%[^\n]s",&temp->emp_designation);
+fwrite(&temp->emp_designation,50,1,fp);
+printf("Enter the mobile no");
+scanf("%d",&emp_mbl_no);
+fwrite(&temp->emp_mbl_no,sizeof(int),1,fp);
+count++;
+   }
+fclose(fp);
+free(temp);
+free(temp->emp_name);
+   }
+void display(char *a)
+   {
+FILE *fp;
+char ch;
+int rec=count;
+fp=fopen(employee.txt,"r");
+struct emp *temp=(struct emp*)malloc(sizeof(struct emp));
+temp->emp_name=(char *)malloc(50*sizeof(char));
+if(fp==NULL)
+printf("Error");
+else
+  { 
+while(rec)
+      {
+fread(&temp->emp_name,50,1,fp);
+printf("%s\n",temp->emp_name);
+fread(&temp->emp_designation,50,1,fp);
+printf("%s\n",temp->emp_designation);
+fread(&temp->emp_mbl_no,sizeof(int),1,fp);
+rec--;
+    }
+   }
+fclose(fp);
+free(temp);
+free(temp->emp_name);
+    }
+void update_rec(char *a)
+  {
+FILE *fp;
+char ch,name[5];
+int rec,id,c;
+fp=fopen(employee.txt,"r+");
+struct emp*temp=(struct emp*)malloc(sizeof(struct emp));
+temp->emp_name=(char *)malloc(sizeof(struct emp));
+printf("Enter the emp name to update:\n");
+scanf("%s",&emp_name);
+fseek(fp,0,0);
+rec=count;
+while(rec)
+   { 
+fread(&temp->emp_name,50,1,fp);
+printf("%s",emp_name);
+if(emp_name==temp->emp_name)
+  {
+printf("Enter the employee name to be updated");
+scanf("%s",&emp_name);
+c=fwrite(emp_name,size,1,fp);
+break;
+  }
+fread(temp->emp_name,size,1,fp);
+rec--;
+      }
+if(c==1)
+printf("success");
+else
+   {
+printf("failure\n");
+fclose(fp);
+free(temp);
+free(temp->emp_mbl_no);
+      }
+   }
+  }
+ }
+
