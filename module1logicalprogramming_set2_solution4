@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<conio.h>
+//function defination
+int getmax_element(int[]);
+//global declaration
+int size,max,i;
+//main function
+int main()
+   {
+//array declaration
+int arr[50];
+clrscr();
+//getting the size of an array and array elements from user
+printf("Enter the size of an array");
+scanf("%d",&size);
+printf("Enter %d elements of an array",size);
+for(i=0;i<size;i++)
+    {
+scanf("%d",&arr[i]);
+    }
+max=getmax_element(arr);
+printf("the miximum element in an array %d",max);
+return 0;
+   }
+//calculating the maximum elemnet in an given array
+int getmax_element(int arr[])
+     {
+static int i=0;max=-9999;
+if(i<size)
+       {
+if(max<arr[i])
+max=arr[i];
+i++;
+getmax_element(arr);
+     }
+return max;
+  }
+
+
