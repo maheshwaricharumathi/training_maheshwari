@@ -1,0 +1,125 @@
+#include<stdio.h>
+//main fuction
+void main()
+ {
+//variable declaration in main function
+int x_value,p_value,n_value,result,x;
+//invert function declaration
+int invert(int,int,int);
+clrscr();
+printf("Enter any integer to invert(x):\n");
+//function calling to get the input
+x_value=get_x_value();
+printf("Enter the start position to invert(p):\n");
+p_value=get_p_value();
+printf("Enter the length to invert(n):\n");
+n_value=get_n_value();
+printf("Enter the binary value of %d is \t",x);
+result=invert(x_value,p_value,n_value);
+printf("\nInverted integer in decimal form is \t%d",result);
+getch();
+  }
+//guntion for grtting the x value
+int get_x_value()
+    {
+int x,x1;
+printf(" Enter the x value");
+x1=scanf("%d",&x);
+if(x1!=1)
+   {
+printf("Enter the integer value");
+scanf("%s");
+x=get_x_value();
+   }
+ else if(x1<0)
+  {
+printf("Enter possitive number");
+x=get_x_value();
+   }
+return x;
+  }
+//function to get the p value
+int get_p_value()
+ {
+int p,p1;
+printf("Enter the p value");
+p1=scanf("%d",&p);
+if(p1!=1)
+   {
+printf("Enter the valid number");
+scanf("%s");
+p=get_p_value();
+    }
+else if(p1<0)
+   {
+printf("Enter the positive integer");
+scanf("%s");
+p=get_p_value();
+   }
+return p;
+   }
+//function to get n value
+int get_n_value()
+     {
+int n=0,n1=0;
+n1=scanf("%d",&n);
+if(n1!=1)
+    {
+printf("Enter the valid number");
+scanf("%s");
+n=get_n_value();
+   }
+else if(n1<0)
+   {
+printf("Enter the positive integer");
+scanf("%s");
+n=get_n_value();
+   }
+return n;
+  }
+//function for inverting the given digit
+int invert(int x,int p,int n)
+  {
+int i,y,limit,length,binary[15];
+length=0;
+while(x>0)
+   {
+binary[length]=x%2;
+x=x/2;
+length++;
+  };
+for(i=length-1;i>-1;i--)
+  {
+printf("%d",binary[i]);
+   }
+printf("\n");
+limit=p+n;
+if(limit<length)
+  {
+for(i=p-1;i<p+n-1;i++)
+     {
+if(binary[i]==0)
+binary[i]=1;
+else
+binary[i]=0;
+   }
+  }
+else
+  {
+printf("you have entered large value for p and n");
+  }
+printf("Inverted integer in binary form is\t");
+//loop for printing the inverted integer in binary form
+for(i=length-1;i>-1;i--)
+     {
+printf("%d",binary[i]);
+  }
+y=0;
+for(i=length-1;i>=0;i--)
+  {
+y=y*2+binary[i];
+      }
+return y;
+  }
+ 
+
