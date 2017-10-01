@@ -1,0 +1,12 @@
+Find the output and give an explanation for the output obtained.
+main( )
+{
+int a, b ;
+a = -4 - -4 ;
+b = -4 - - ( - 4 ) ;
+printf ( "a = %d b = %d", a, b ) ;
+}
+ANS:
+  a=0,b=-8;
+
+
