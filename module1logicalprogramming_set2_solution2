@@ -1,0 +1,80 @@
+#include<stdio.h>
+#include<conio.h>
+//function defination
+int vowel(char string);
+int consonant(char string);
+int whitespace(char string);
+int digit(char string);
+//main function
+void main()
+ {
+//variable declaration in main function
+char str[50];
+int vowel_of_string=0,white_space=0,digit_of_string=0,consonant_of_string=0,i;
+clrscr();
+printf("Enter a string");
+//get the string AS INPUT from user
+gets(str);
+for(i=0;str[i]!='\0';i++)
+     { 
+vowel_of_string+=vowel(str[i]);
+consonant_of_string+=consonant(str[i]);
+digit_of_string+=digit(str[i]);
+white_space+=whitespace(str[i]);
+     }
+//printing the no of vowels and digitts,whitespace,consonants in the given string
+printf("Vowels:%d\n",vowel_of_string);
+printf("consonant:%d\n",consonant_of_string);
+printf("digit:%d\n",digit_of_string);
+printf("whitespace:%d",white_space);
+getch();
+  }
+//function for counting the vowels in the given string
+int vowel(char string)
+    {
+if(string=='a'||string=='e'||string=='i'||string=='o'||string=='u'||string=='A'||string=='E'||string=='I'||string=='O'||string=='U')
+       {
+return 1; 
+       }
+else
+   {
+return 0;
+   }
+ }
+//function for calculating the consonants
+int consonant(char string)
+   {
+if(((string<='a'&&string<='z')||string>='A'&&string<='Z')&&!vowel(string))
+      {
+return 1; 
+      }
+else
+  {
+return 0;
+  }
+      }
+//function for calculating the digits in given string
+int digit(char string)
+     {
+if(string>='0'&&string<='9')
+         {
+return 1;
+          }
+else
+   {
+return 0;
+   }
+ }
+//function for calculating the whitespace
+int whitespace(char string)
+   {
+if(string==' ')
+     {
+return 1;
+     }
+else
+  {
+return 0;
+   }
+ }
+  
