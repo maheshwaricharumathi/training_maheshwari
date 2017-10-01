@@ -1,0 +1,242 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+//Global variable declaration
+int no_of_students;
+//structure defination
+struct student
+   {
+//structure variables declaration
+float cgpa;
+char name[50];
+int year;
+char dept[20];
+     }s[10]; 
+void main()
+   {
+int i=0,j=0,variable=0,choice;
+char temp[15];
+float t=0.0;
+clrscr();
+printf("Enter number student");
+no_of_students=get_int();
+for(i=0;i<no_of_students;i++) 
+    {
+printf("Eter the name dept cgpa year of student %d\n",i+1);
+scanf("%s",&s[i].name);
+scanf("%s",&s[i].dept);
+s[i].cgpa=get_float();
+s[i].year=get_int();
+    }
+for(i=0;i<no_of_students-1;i++)
+      {
+for(j=i+1;j<no_of_students;j++)
+        {
+if(strcmp(s[i].name,s[j].name)>0)
+            {
+strcpy(temp,s[i].name);
+strcpy(s[i].name,s[j].name);
+strcpy(s[j].name,temp);
+strcpy(temp,s[i].dept);
+strcpy(s[i].dept,s[j].dept);
+strcpy(s[j].dept,temp);
+variable=s[i].cgpa;
+s[i].cgpa=s[j].cgpa;
+s[j].cgpa=t;
+variable=s[i].year;
+s[i].year=s[j].year;
+s[j].year=variable;
+        }
+    }
+ }
+printf("\n 1.diplay name od students from particular year");
+printf("\n2.diplay names of students from particular department");
+printf("\n3.diplay all details of the student having highest cgpa");
+printf("\n4.diplay all details of the student from particular dept having highest cgpa");
+printf("\n5.diplay all details of particular student");
+printf("\n6.display all details of all student");
+printf("\n7.update cgpa of s particular student");
+printf("\n8.exit");
+printf("\nEnter the your choice");
+choice=get_int();
+do
+   {
+switch(choice)
+      {
+case 1:
+year_of_student();
+break;
+case 2:
+department_student();
+break;
+case 3:
+overall_cgpa();
+break;
+case 4:
+highest_cgpa();
+break;
+case 5:
+name_of_student();
+break;
+case 6:
+all_details();
+break;
+case 7:
+update_cgpa();
+break;
+case 8:
+exit(0);
+break;
+default:
+printf("\nInvalid choice");
+   }
+printf("\n Enter your choice");
+choice=get_int();
+  }
+while(choice!=8);
+   {
+int get_int()
+    {
+int num=0,n1=0;
+n1=scanf("%d",&num);
+if(n1!=1)
+     {
+printf("enter valid number");
+scanf("%s");
+num=get_int();
+     }
+else if(num<0)
+  {
+printf("enter positive integer");
+num=get_int();
+  }
+return num;
+  }
+float get_float()
+    {
+float num;
+int n1=0;
+n1=scanf("%d",&num);
+if(n1!=1)
+     {
+printf("Enter valid number");
+scanf("%s");
+num=get_float();
+    }
+else if(num<0)
+ {
+printf("Enter positive number");
+num=get_float();
+  }
+return num;
+    }
+void year_of_student()
+  {
+int yr,i,flag=0;
+printf("Enter the year");
+yr=get_int();
+for(i=0;i<no_of_students;i++)
+   {
+if(s[i].year==yr)
+  {
+printf("\n%s",s[i].name);
+flag=1;
+   }
+  }
+if(flag==0)
+    {
+printf("No names are avalialable");
+     }
+  }
+void department_student()
+  {
+int i,flag=0;
+char ch[20];
+printf("Enter the department");
+scanf("%s",&ch);
+for(i=0;i<no_of_students;i++)
+  {
+if(strcmp(ch,s[i].dept)==0)
+  {
+printf("\n%s",s[i].name);
+flag=1;
+   }
+ }
+if(flag==0)
+   { 
+printf("No names are availabe");
+    }
+ }
+void overall_cgpa()
+   {
+int i=0,p=0;
+float hcgpa;
+for(i=0;i<no_of_students;i++)
+   {
+if(hcgpa<s[i].cgpa)
+   {
+   hcgpa=s[i].cgpa;
+p=i;
+      }
+   }
+printf("overall highest cgpa\nName%s\ndept%s\ncgpa%f\nyear%d",s[p].name,s[p].dept,s[p].cgpa,s[p].year);
+  }
+void highest_cgpa()
+    {
+int i,p;
+float hcgpa;
+char dept[20];
+printf("enter the dept of the student");
+scanf("%s",&dept);
+for(i=0;i<no_of_students;i++)
+   {
+if(strcmp(dept,s[i].dept)==0)
+     {
+if(hcgpa<s[i].cgpa)
+       {
+p=i;
+       }
+    }
+  }
+printf("\n highest cgpa in dept \nname%s\ndept%s\ncgpa%f\nyear%d",s[p].name,s[p].cgpa,s[p].year);
+ }
+void name_of_student()
+   {
+int i;
+char name1[20];
+printf("Enter the name");
+scanf("%s",&nam1);
+for(i=0;i<no_of_students;i++)
+     {
+if(strcmp(name1,s[i].name)==0)
+           {
+printf("\n name%s\ndept%s\n cgpa%f\nyear %d",s[i].name,s[i].dept,s[i].cgpa,s[i].year);
+break;
+       }
+    } 
+  }
+void all_details()
+   {
+int i;
+printf("\n All details of all students\nname\tdept\t cgpa\tyerar");
+for(i=0;i<no_of_students;i++)
+   {
+printf("\n\t%s\t%s\t%f\t%d",s[i].name,s[i].dept,s[i].cgpa,s[i].year);
+   }
+  }
+void update_cgpa()
+    {
+int i;
+char name1[10];
+printf("Enter  stud name to update cgpa");
+scanf("%s",&name1);
+for(i=0;i<no_of_students;i++)
+   {
+if(strcmp(name1,s[i].name)==0)
+    {
+s[i].cgpa+=0.5;
+printf("\n updated successfully");
+break;
+     }
+   }
+ }
