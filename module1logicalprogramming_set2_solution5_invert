@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<conio.h>
+int g_length=0;//global declaration
+void decimal_to_binary(unsigned decimal)/fuction for calculationg binary file
+{
+int variable=0,binary[20],length=-1;
+printf("\n binary number of %u is ",decimal);
+while(decimal>0)
+{
+length++;
+binary[length]=decimal%2;
+decimal=decimal/2;
+}
+g_length=length;
+for(variable=length;variable>=0;variable--)
+printf("%d",binary[variable]);
+}
+unsigned invert_function(unsigned x_value,int p_value,int n_value)
+{
+return x_value^((~((~0)<<n_value))>>(n_value-p_value-1));
+}
+void main()
+{
+unsigned number=0,invert=0;
+int position=0,bits=0;
+clrscr();
+//getting inputs
+printf("Enter the number");
+scanf("%u",&number);
+printf("Enter the position");
+scanf("%d",&position);
+printf("Enter the bits");
+scanf("%d",&bits);
+decimal_to_binary(number);//function calling
+bits=g_length;
+printf("length  %d:",g_length);
+invert=invert_function(number,position,bits);
+printf("length after invert %u",invert);
+decimal_to_binary(invert);
+getch();
+}
