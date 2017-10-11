@@ -1,0 +1,17 @@
+10.	For some strange reason, the program here thinks that everyoneowes a balance of O dollars. Why?
+
+#include <iostream.h>
+int balance_owed; // amount owed
+main ()
+{
+cout << "Enter number of dollars owed:";
+cin >> balance_owed;
+if (balance_owed = 0)
+cout << "You owe nothing.\n";
+else
+cout << "You owe " << balance_owed << " dollars.\n";
+return (0);
+}
+EXPLANATION:
+	In this program, if statement  assigning the value 0 to balance_owed so everyones balance
+as 0 dollars when we print the ouput.
