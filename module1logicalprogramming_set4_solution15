@@ -1,0 +1,17 @@
+15.	This Examplecomputes the wrong valuefor size. Why?
+#include <iostream.h>
+#define SIZE 10;
+#define FUDGE SIZE -2;
+main ()
+{
+int size; // Size to really use
+size = FUDGE;
+cout << "Size is " << size << '\n';
+return (0);
+}
+
+EXPLANATION:
+	In this program it will print the wrong answer as 10 insteed of 8 because the macro function of this 
+program declaration is wrong.(i.e)semicolon(;)
+
+if we remove the semicolon in macro function the output will be size 8. 
