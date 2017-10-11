@@ -1,0 +1,27 @@
+6.	Explain auto, register, static and extern variables.
+AUTO:
+	Auto is the default storage class for all local variables
+EX:
+{	int variable;
+        auto int variable1;
+} 	
+
+REGISTER:
+	Register is used to define local variables with the same storage class auto can only
+be used within functions(i.e)local variables
+EX:
+{
+	register int variable;
+}
+
+STATIC:
+	It is default storage class for gloabal bariables.The following two variables both have a sstatic
+ storage class.
+EX:
+	static int variable;
+	 int variable1;
+   
+EXTERN:
+	Extern is used to give a refernce of a global variables that is visible to
+all the program files.
+
