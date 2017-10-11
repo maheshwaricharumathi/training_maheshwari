@@ -1,0 +1,18 @@
+18.	The following program tells us we have an undefined variable, but our only variable name is counter. Why?
+#include <iostream.h>
+#define RECIPROCAL (number) (1.0 / (number))
+main()
+}
+float counter;
+for (counter = 0.0; counter < 10.0;
+counter += 1.0)
+cout << "1/" << counter << " = "<<
+RECIPROCAL(counter) << "\n";
+}
+return (0);
+}
+
+EXPLANATION:
+	In this program we have the undefined variable number because in macro function we used the space between the 
+RECIPROCAL and number it is  syntax error,so the compiler do not consider the number as variable.
+ 
