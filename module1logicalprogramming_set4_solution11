@@ -1,0 +1,25 @@
+11.	What is the error in this program?
+#include <iostream.h>
+/*
+* This program produces a Celsius to Fahrenheit conversion
+* chart for the numbers 0 to 100.
+*
+* Restrictions:
+* This program deals with integers only, so the
+* calculations may not be exact.
+*/
+// The current Celsius temperature we are working with
+int celsius;
+main() {
+for (celsius = 0; celsius <= 100; ++celsius);
+cout << "Celsius: " << celsius <<
+" Fahrenheit: " << ((celsius * 9) / 5 + 32) << '\n';
+return (0);
+}
+When run, this program prints out:
+Celsius: 101 Fahrenheit: 213
+and nothing more. Why?
+
+EXPLANATION:
+	Here,The for loop has terminated at end of the statement so it will execute only once after gets incremented as 101 so,
+  it will print celcius:101 Fahrenheit:213 as output.
