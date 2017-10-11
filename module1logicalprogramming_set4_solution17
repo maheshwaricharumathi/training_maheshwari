@@ -1,0 +1,23 @@
+17.	What does the above program output? (Try running it on your machine.). Why did it output what it did? (Try checking the output of the preprocessor.)
+
+#include <iostream.h>
+#define SQR(x) ((x) * (x))
+main ()
+{
+int counter; /* Counter for loop */
+counter = 0;
+while (counter < 5)
+cout << "x << counter + 1 <<
+" x squared" << SQR(++counter) << '\n';
+return (0);
+}
+Why does this not produce the expected output? How much does the counter go up each time.
+
+ ANSWER
+  X3
+  XSQUARED4
+  X5
+  X squared16
+  
+  EXPLANATION:
+  The counter value incremented 2 at each time
