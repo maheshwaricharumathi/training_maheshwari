@@ -1,0 +1,7 @@
+1.The following will work on a UNIX machine but willfail on a PC
+int zip; // zip code for current address
+........
+zip = 92126;
+EXPLANATION:
+	In this program,when we try to execute the program the integer range gets exceed,if we try to run this program on pc
+ we get the output is 26590   
