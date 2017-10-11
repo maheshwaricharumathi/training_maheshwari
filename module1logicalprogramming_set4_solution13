@@ -1,0 +1,29 @@
+13.	The following program generates the answer 47 instead of the expected answer 144. Why?
+#include <iostream.h>
+#define FIRST_PART 7
+#define LAST_PART 5
+#define ALL_PARTS FIRST_PART + LAST_PART
+main()
+{
+cout << "The square of all the parts is " <<
+ALL_PARTS * ALL_PARTS << '\n';
+return (0);
+}
+
+EXPLANATION:
+	The program generated the answer 47,the explanation is given below.
+#include <iostream.h>
+#define FIRST_PART 7
+#define LAST_PART 5
+#define ALL_PARTS FIRST_PART + LAST_PART//all parts= 5+7
+main()
+{
+cout << "The square of all the parts is " <<
+ALL_PARTS * ALL_PARTS << '\n';//5+7*5+7==>5+35+7==>47
+return (0);
+}
+ANS:47
+
+Here,the expression 5+7*5+7
+first calculate the first priority 7*5=35
+then,add the value 5+35+7=47
