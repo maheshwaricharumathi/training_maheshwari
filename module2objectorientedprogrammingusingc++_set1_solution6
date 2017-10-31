@@ -1,0 +1,13 @@
+6.Brief the difference between Class and Struct. Also, provide some information on when to use them.
+
+Class:
+
+	A  class in c++ can be defined as a collection of related variables and functions encapsulated in a single structure
+Keyword:class
+Usage:generally used for large amount of data
+
+Structure:
+	A structure can be referred to as a user defined data type possessing its own operations.
+Keyword:struct
+Purpose:generally grouping of data,and used amount of data.
+	
