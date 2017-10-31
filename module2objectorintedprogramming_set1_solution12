@@ -1,0 +1,32 @@
+4.	Why does this example not print an error message when an incorrect
+command is entered?
+#include <iostream.h>
+#include <stdlib.h>
+main()
+{
+char line[10];
+while (1) {
+cout << "Enter add(a), delete(d), quit(q): ";
+cin.getline(line, sizeof(line));
+switch (line[0]) {
+case 'a':
+cout << "Add\n";
+break;
+case 'd':
+cout << "Delete\n";
+break;
+case 'q':
+cout << "Quit\n";
+exit(0);
+defualt:
+cout << Error: Bad command << line[0] << '\n';
+break;
+}
+}
+return (0);
+}
+ANSWER:
+	In the above program,The  default statement having the error which means the misspelling occurred as defualt.That why error message was not displayed when we run the above program.
+
+	
+
