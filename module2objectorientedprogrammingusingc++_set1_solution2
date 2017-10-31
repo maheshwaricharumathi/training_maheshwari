@@ -1,0 +1,41 @@
+2.	What is the output of the below code snippet. Provide necessary explanation to support your view.
+
+#include <iostream.h>
+class BaseClass
+{
+    int x;
+public:
+    int y;
+    void set(int a,int b)
+    {
+        x=a;
+        y=b;
+    }
+    void show()
+    {
+        std::cout<<"X ="<<x;
+    }
+}; 
+class DerivedClass :public BaseClass
+{
+    int i;
+};
+int main()
+{
+    int baseSize,derivedSize;
+    BaseClass bc;
+    DerivedClass dc;
+
+    derivedSize=sizeof(dc);
+    baseSize=sizeof(bc);
+    std::cout<<"Size of BaseClass "<<baseSize << "\n";
+    std::cout<<"Size of DerivedClass "<<derivedSize << "\n";
+    return 0;
+}
+
+ANSWER:
+In this above program,there are two classes declared such as baseclass and derived class.
+In baseclass we have a declared two variables as int x,int y,in derived class we declared one integer variable i,here we calculate only the size of class using object so the output of the above program is given below.( each integer variable sizes are 4bytes).
+OUTPUT:
+Size of baseclass 8 (i.e)The baseclass having two integer variables
+Size of derived class 12(i.e)The derived class having the 3 variables because it derived the two variables from the baseclass
