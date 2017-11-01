@@ -1,0 +1,48 @@
+1.	Why does this example fail? When run it prints out:
+Copy constructor called
+Copy constructor called
+over and over.
+
+1 #include <iostream.h>
+2
+3 class trouble {
+4 public:
+5 int data;
+6
+7 trouble(void);
+8 trouble(const trouble &old);
+9 trouble operator = (trouble old_trouble);
+10 };
+11
+12 trouble::trouble(void) {
+13 data = 0;
+14 }
+15
+16 trouble::trouble(const trouble &old) {
+17 cout << "Copy constructor called\n";
+18 *this = old;
+19 }
+20
+21 trouble trouble::operator = (trouble old_trouble) {
+22 cout << "Operator = called\n";
+23 data = old_trouble.data;
+24 return (*this);
+25 }
+26
+27 int main()
+28 {
+29 trouble troublel;
+30 trouble trouble2(troublel);
+31
+32 return (0);
+33 }
+
+
+ANSWER:
+
+
+	In the above programthe parameter passed as call by value parameter,so it call the copy constructer loop infinitly in this program.
+  if we pass the parameter as reference to the function the output will occur correctly.
+(i.e) trouble trouble::operator=(trouble &old_trouble)
+	
+	
