@@ -1,0 +1,27 @@
+1.	Why does this example work on UNIX, but when we run it in
+MSDOS/Windows we get the message:
+oot
+ew able: file not found
+
+#ifndef __MSDOS_
+#define NAME "/root/new/table"
+#else __MSDOS_
+#define NAME "\root\new\table"
+#endif __MSDOS_
+in_file.open(NAME);
+if (in_file.bad) {
+cout << NAME << ": file not found\n";
+exit (8);
+}
+
+Explanation
+
+	In this case,here we used the statement “\root\new\table” .
+The compiler take this as output formatting in MSDOS.
+We used  following output formatting 
+\r ==is carriage return
+\n ==new line
+\t ==single tab
+So the output will be
+oot
+ew able
