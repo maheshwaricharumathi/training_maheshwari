@@ -1,0 +1,23 @@
+What is wrong in this program? If there is any problem with the below code, provide the corrected code.
+class Human
+{
+public:
+Human() {}
+~ Human(){}
+};
+class Pilot: public Human
+{
+public:
+Pilot():Human(){}
+~ Pilot(){}
+};
+int main(void)
+{
+Human* george = new Pilot();
+  delete george;
+}
+ANSWER:
+In this program,the object is created for baseclass and assigned to the derived class so,initially the baseclass destructor is called.
+ we have to write the code as belo
+virtual ~Human()
+
