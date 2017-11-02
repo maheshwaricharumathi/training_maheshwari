@@ -1,0 +1,50 @@
+A CustomVector class is defined as follows: 
+class CustomVector {
+ public: 
+// constructors and other public interface goes here 
+private: 
+// private data 
+std::vector< double> elements; 
+int length; 
+};
+
+(a) Design and code three constructors: 
+(i) a constructor: that takes a single integer that indicates the size of vector; 
+(ii) a constructor: that takes a length integer and an array of doubles to initialise the values; 
+(iii) a copy constructor. 
+(b) Give a example usage of each. 
+(c) Explain the problem that would arise if we used dynamic memory allocation (C++-style new or C-style malloc) instead of using std::vector<>
+(d) What mechanism shall be used to overcome the problems arising in part (c)?
+(e) For CustomVector class, show how the square brackets operator (indexing operator) can be overloaded to return a given indexed element. Should this operator be a class member function, and if so will it be private or public
+
+(a)
+#include<iostream.h>
+Use namespace std:
+Class CustomVector
+{
+Public:
+CustomVector(vector <int>vec)
+
+Cout<<”size of vector<<vec.size();
+}
+
+
+ii)
+
+CustomVector(int length)
+{
+Length=length*length;
+Cout<<”length of integer”<<length;
+}
+
+b.
+
+C.
+Dynamic memory allocation allocate non contigeous memory and venctos memory llocation allocate contigeous memory allocation.
+Dynamic memory allocation allocates the memory on heap section if the user not freed the pointer variable it cause the memory leak.
+
+
+d.
+if we use the free()function  to free the memory allocated to the pointer variable.it overcome the problem araising in(C) 
+
+e.
