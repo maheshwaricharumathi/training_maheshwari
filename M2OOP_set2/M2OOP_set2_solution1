@@ -1,0 +1,59 @@
+1.	Write down different classes for a computer soccer game. Implementation not required (Classes and Objects)
+
+Class soccer_game
+{
+Public:
+String  players;
+string basics;
+string Soccer fields;
+};
+Public class soccer _equipment
+{
+Public:
+Soccer_ ball;
+ uniform_kit;
+ shin_ guards;
+//function
+};
+Public class team_formation
+{
+Public:
+string Midfielders;
+string defenders;
+ string forwards;
+};
+Public class penalty
+{
+Public:
+Int  Penalty_area;
+ Int Penalty_mark;
+ Int Penalty_arc;
+}
+Public class Goal_keeper
+{
+Public:
+String  catching_the_ ball;
+ String rolling¬_the_ball;
+ String passing_the_ ball;
+String  blocking_the_ ball;
+//function
+};
+Public class Foul
+{
+Public:
+ String kicking;
+ String tripping;
+ String holding;
+String pushing;
+//funtion
+};
+Int main()
+{
+Soccer_game  game;
+Soccer_eqipments  fields;
+Teamformation team;
+Penalty rule;
+Goal_keeper  goal;
+Foul  ball;
+}
+
