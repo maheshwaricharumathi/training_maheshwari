@@ -1,0 +1,41 @@
+3.	 Explain encapsulation with following:  Implementation not required
+Mobile Phone and Mobile Phone Manufacturer
+
+
+ANSWER:
+ENCAPSULATION:
+	Encapsulation is object oriented programming concept that binds together the data and function that manipulate the data.both keep safe from outside interference.
+EXPLANATION:
+We can take an example as mobile phone and mobile phone manufacturer.
+	In this example here we can take the  mobile phone as object and the object has a collection of data’s.here that collection of data’s are bind together with object.if the user want to make a call from mobile phone the user should do something like dialing the number.the process of dialing is data and making a call is function and mobile phone is object.  
+
+ class Mobile_Phone {  
+           public void Calling();  
+public void SMS();  
+public void FMRadio();
+}  
+public class nokia: Mobile_Phone {
+}
+public class iphone: Mobile_Phone {
+public void size();
+public void design();
+public void displayquality();
+}  
+public class blackberry: Mobile_Phone {
+  	
+            private void processorspeed();
+public void MP3();  
+public void Camera();    
+}  
+public class mi: Mobile_Phone {
+	  
+public void FMRadio();  
+public void MP3();  
+public void Camera();  
+public void Video_Recording();  
+public void displayquality();  
+public void battery_capacity ();
+}
+
+
+
