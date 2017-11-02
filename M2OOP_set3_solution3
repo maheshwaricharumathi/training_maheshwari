@@ -1,0 +1,27 @@
+3.	Design classes for a ticketing system for a cultural-show, where ticket rates goes up or down according to the demand.
+a.	If tickets werenot booked in the last 6 hours, the prices should fall by 5%. The ticket rates shall be resumed after 2 hours.
+ANSWER:
+Class ticket_counter
+{
+Public:
+Int ticket_rate;
+Int hours;
+String Ticket_booking;
+};
+class
+If(Ticket_booking==”not booked”)
+{
+If(hours>=6)
+{
+Flat_Discount=ticket_price*(5/100);
+}
+}
+};
+Class resumed_rate
+{
+If(>2)
+{
+Ticket_price=ticket_price
+}
+};
+
