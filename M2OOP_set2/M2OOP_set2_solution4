@@ -1,0 +1,41 @@
+4.A group of  geometric figures have a position and an orientation in a three dimensional space, and a function to drawthemself. 
+   The geometric objects are: Point, Line, Plane, Cube, Cuboid. 
+   Implementation not required
+  (a) Draw a likely class hierarchy.
+  (b) Write the base class with required attributes and methods.
+  (c) Explain why, by using a base class and hierarchy, the process of including a new
+   subclass, such as a Ellipsoid, is impressivelyeasy.
+
+Class shapes
+{
+Area();
+Volume();
+Public class cube:shapes
+{
+Int x;
+}
+Public class cuboid:shapes
+{
+Int breath;
+Int width;
+Int length;
+}
+Public class line
+{
+Int x,y;
+}
+Public class point
+{
+X;
+}
+Public class ellipsoid:shapes
+{
+Int a,b,c;
+}
+Public class plane:shapaes
+{
+Int x[4],y[4];
+}
+
+The baseclass having the common attributes and methods.
+so while inheriting the baseclass to the subclass the baseclass attrubites and methods can overridden in the baseclass so we can use the memory  efficiently.
