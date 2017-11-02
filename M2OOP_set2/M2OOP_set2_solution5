@@ -1,0 +1,54 @@
+Write a simple program which loops over a list of user data (tuples containing a username, email and age) and adds each user to a directory if the user is at least 16 years old. You do not need to store the age. Write a simple exception hierarchy which defines a different exception for each of these error conditions:
+•	the username is not unique
+•	the age is not a positive integer
+•	the user is under 16
+•	the email address is not valid (a simple check for a username, the @ symbol and a domain name is sufficient)
+Raise these exceptions in your program where appropriate. Whenever an exception occurs, your program should move onto the next set of data in the list. Print a different error message for each different kind of exception.
+You can consider an email address to be valid if it contains one @ symbol and has a non-empty username and domain name – you don’t need to check for valid characters. You can assume that the age is already an integer value.
+
+
+
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+Void main()
+{
+//Data members
+String username;
+Int age;
+String user;
+String emailid;
+Int no_of_user,size;
+Cout<<”Enter the no_ of_ user”;
+Cin>>no_of_user;
+For(size=0;size>=no_of_user;size++)
+{
+//getting user details
+Cout<<”Enter the user name”;
+Cin>>username;
+Cout<<”Enter the user age”;
+Cin>>age;
+Cout<<”Enter the email”:
+Cin>>emailed;
+Try
+{
+If(age<16)
+{
+Cout<<:Exception occurred”;
+Throw age;
+}
+Catch(int age1)
+{
+Cout<<”exception”;
+}try{
+If(emailidnotvalid){
+Cout<<”exception occurred”;
+}
+Try
+{
+Throw emailed;
+}
+Catch(string emailid){
+Cout<<”NoSuchFieldException”;
+}
+}
