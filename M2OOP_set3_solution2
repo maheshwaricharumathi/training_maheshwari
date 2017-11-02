@@ -1,0 +1,44 @@
+2.	Design classes for a discount system which can be used in places that provides services and sells any products. The system should offer 3 types of memberships: Premium, Gold and Silver. Premium, gold and silver members receive a discount of 20%, 15%, and 10%, respectively, for all services provided. Customers without membership receive no discount. All members receives a flat 10% discount on products purchased (this might change in future).
+
+Class product
+{
+Public:
+String membership_name;
+Int product_price;
+String product_name;
+String final_price;
+};
+Class discount
+{
+String premium;
+String gold;
+String silver;
+If(membership_name==”Premium”)
+{
+Product_price=product_price*(20/100);
+Final_price=product_price*(10/100);
+Cout<<”final_price”;
+}
+ If else(membership_name==”Gold”)
+{
+Product_price=product_price*(15/100);
+Final_price=product_price*(10/100);
+Cout<<”final_price”;
+}
+If else(membership_name==”silver”)
+{
+Product_price=product_price*(10/100);
+Final_price=product_price*(10/100);
+Cout<<”Final_price”;
+}
+Else
+{
+Product_price=product_price;
+}
+};
+
+
+
+
+
+
