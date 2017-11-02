@@ -1,4 +1,4 @@
-4.	In this exercise you will write a program which estimates the cost of a telephone call, and also implement unit tests for the program.
+	In this exercise you will write a program which estimates the cost of a telephone call, and also implement unit tests for the program.
 The phone company applies the following rules to a phone call to calculate the charge:
 •	The minimum before-tax charge of 59.400 cents applies to all calls to any destination up to 50km away and 89.000 cents for any destination further than 50km away.
 •	Calls are charged on a per-second basis at 0.759 cents per second (<= 50km) and 1.761 cents per second (> 50km)
