@@ -1,0 +1,271 @@
+organization.h
+
+
+
+#include"employee1.h"
+using namespace std;
+class organization
+{
+public:
+
+　
+public:
+	void get_details();
+	void display_names();
+	void highest_pay();
+	void sorted_order();
+	void update_pay();
+	void remove_from_queue();
+	void add_to_queue();
+};
+	
+
+
+
+
+organization.cpp
+
+
+#include"organization.h"
+
+　
+employee1 e;
+
+void organization::get_details()
+{
+	cout << "Enter the employee details" << endl;
+	e.employee_id.push_back(e.id);
+	cout << "Enter the employee name:" << endl;
+	cin >> e.name;
+	e.employee_name.push_back(e.name);
+	cout << "Enter the year of joining:" << endl;
+	cin >> e.joining;
+	e.year_validation();
+	e.employee_year_of_joining.push_back(e.joining);
+	cout << "Enter the emp salary";
+	cin >> e.salary;
+	e.employee_salary.push_back(e.salary);
+	cout << "Enter the department of employee:" << endl;
+	cin >> e.department;
+	e.employee_department.push_back(e.department);
+	e.id = e.id++;
+}
+void organization::display_names()
+{
+	int year;
+	cout << "Enter the year of joining:" << endl;
+	cin >> year;
+	for (int i = 0; i <e.employee_id.size(); i++)
+	{
+		if (e.employee_year_of_joining[i] == year)
+		{
+			cout<<e.employee_name[i] << endl;
+		}
+	}
+}
+void organization::sorted_order()
+{
+	for (int i = 0; i < e.employee_id.size(); i++)
+	{
+		cout << "The emp_id:" << endl;
+		cout << "EMP" << endl;
+		cout << e.employee_id[i]<<endl;
+		cout << "Emp_name:" << endl;
+		cout << e.employee_name[i] << endl;
+		cout << "emp_year_of_joining:" << endl;
+		cout << e.employee_year_of_joining[i] << endl;
+		cout << "emp_salary:" << endl;
+		cout << e.employee_salary[i]<<endl;
+		cout << "emp_department:" << endl;
+		cout << e.employee_department[i]<<endl;
+		
+	}
+}
+void::organization::update_pay()
+{
+	int id;
+	cout << "Enter the employee id to update pay:" << endl;
+	cin >> id;
+	for (int i = 0; i <e.employee_id.size(); i++)
+	{
+		if (e.employee_id[i] == id)
+		{
+			e.employee_salary[i] = e.employee_salary[i]+ (e.employee_salary[i] * 0.05);
+			cout << "Updated employee_salary is:" << endl;
+			cout << e.employee_salary[i];
+		}
+	}
+}
+
+void organization::highest_pay()
+
+{
+	int pay = 0, pos;
+	string department;
+	cout << "Enter the department of the employee:" << endl;
+	cin >> department;
+	for (int i = 0; i < e.employee_id.size(); i++)
+	{
+		if (e.employee_department[i] == department)
+		{
+			if (pay < e.employee_salary[i])
+			{
+				pay = e.employee_salary[i];
+				pos = i;
+
+			}
+			cout << "The employee id:", cout << endl;
+			cout << e.employee_id[i] << endl;
+			cout << "The employee name"; cout << endl;
+			cout << e.employee_name[i] << endl;
+			cout << "The year of joining:" << endl;
+			cout << e.employee_year_of_joining[i] << endl;
+			cout << "The salary of the employee:" << endl;
+			cout << e.employee_salary[i] << endl;
+			cout << "the department of employee:" << endl;
+			cout << e.employee_department[i] << endl;
+
+		}
+	}
+
+　
+}
+void organization::add_to_queue()
+{
+
+}
+void organization::remove_from_queue()
+{
+
+}
+
+int main()
+{
+	
+	organization org;
+	int choice;
+
+	while (1)
+	{
+		cout << "Enter your choice:" << endl;
+		cout << "1.get details:" << endl; cout << "2.display details:" << endl; cout << "3.display names regarding joining:" << endl;
+		cout << "4.highest pay:" << endl; cout << "5.ascending order" << endl; cout << "6.update pay:" << endl;
+		cin >> choice;
+		switch (choice)
+		{
+		case 1:
+
+			cout << "get details of the employee:" << endl;
+			org.get_details();
+			break;
+		case 2:
+			cout << "display the employee details:" << endl;
+			e.display();
+			break;
+		case 3:
+			cout << "Display the names regarding the date_of_joining:" << endl;
+			org.display_names();
+			break;
+		case 4:
+			cout<< "highest_pay:" << endl;
+		org.highest_pay();
+			break;
+		case 5:
+			cout << "ascending_order:" << endl;
+			org.sorted_order();
+			break;
+		case 6:
+			cout << "update_the_pay:" << endl;
+			org.update_pay();
+			break;
+		default:
+			cout << "THIS IS DEFAULT STATEMENT" << endl;
+		}
+	}
+}
+	
+
+
+
+
+
+
+
+
+employee.h
+
+
+
+#pragma once
+#include<iostream>
+#include<vector>
+#include<string>
+using namespace std;
+class employee1
+{
+public:
+	vector<int>employee_id;
+	vector<string>employee_name;
+	vector<int>employee_year_of_joining;
+	vector<int>employee_salary;
+	vector<string>employee_department;
+	int id=101;
+	string name;
+	int joining;
+	int salary;
+	string department;
+	public:
+
+	void display();
+	void year_validation();
+	void integer_validation();
+
+};
+
+employee.cpp
+
+
+#include"employee1.h"
+
+　
+　
+void employee1::display()
+{
+	cout << "The employee details" << endl;
+	for (int i = 0; i < employee_id.size(); i++)
+	{
+		cout << "EMP";
+		cout << employee_id[i] << endl;;
+		cout << "The name of the employee:" << endl;
+		cout << employee_name[i] << endl;
+		cout << "The year of joining:" << endl;
+		cout << employee_year_of_joining[i] << endl;
+		cout << "The salary of the employee:" << endl;
+		cout << employee_salary[i] << endl;
+		cout << "The emp_department:" << endl;
+		cout << employee_department[i] << endl;
+
+　
+	}
+}
+void employee1::year_validation()
+
+{
+	
+	if (joining>= 1985 && joining<= 2017)
+	{
+		employee_year_of_joining.push_back(joining);
+	}
+	else
+	{
+		cout << "Enter the valid data:" << endl;
+			cin >> joining;
+	}
+}
+void employee1::integer_validation()
+{
+}
+
+　
+　
+　
