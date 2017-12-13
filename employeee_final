@@ -1,0 +1,672 @@
+employee.h
+
+
+
+#pragma once
+#include<iostream>
+#include<vector>
+#include<string>
+using namespace std;
+class employee1
+{
+public:
+	vector<int>employee_id;
+	vector<string>emp_id;
+	vector<string>employee_name;
+	vector<int>employee_year_of_joining;
+	vector<float>employee_salary;
+	vector<string>employee_department;
+	int id=101;
+	string id_value = "EMP";
+	string name;
+	int joining;
+	float salary;
+	string department;
+	
+public:
+	void display_details();
+	void year_validation();
+	int integer_validation();
+	
+
+};
+
+
+employee.cpp
+
+
+
+#include"employee1.h"
+
+　
+　
+　
+　
+void employee1::year_validation()
+
+{   
+	if (joining >= 1985 && joining <= 2017)
+	{
+		employee_year_of_joining.push_back(joining);
+	}
+
+	else
+	{
+		cout << "Enter the valid data:" << endl;
+		cin >> joining;
+	}
+
+}
+int employee1::integer_validation()
+{
+	int num = 0;
+	   while (!cin)
+	   {
+		   cout << "Enter an integer: ";
+		   cin >> num;
+		   cin.clear();
+		   cin.ignore(numeric_limits<int>::max(), '\n');
+		     cin >>num;
+	   }
+
+	   return num;
+	
+}
+
+
+queue.h
+
+
+
+
+#pragma once
+#include<iostream>
+#include<vector>
+#include<string>
+#include"employee1.h"
+using namespace std;
+class queuedata
+{
+public:
+	vector<int>employe_id;
+	vector<string>employe_name;
+	vector<string>employe_department;
+	vector<int>bench_member;
+	vector<int>project_member;
+	int emp_id;
+	int add_to_project=0;
+	int add_to_bench = 0;
+		
+public:
+	void employee_details(vector<int>employee_id,vector<string>employee_name,vector<string>employe_department);
+	
+	void bench_details();
+	void display_bench_details();
+	void project_details();
+	void display_poject_details();
+	void remove_from_project();
+	void remove_from_bench();
+	void add_employee_to_project();
+	void add_employee_to_bench();
+	void after_insertion_deletion();
+	
+};
+queue.cpp
+
+
+#include "queuedata.h"
+
+void queuedata::employee_details(vector<int>employee_id,vector<string>employee_name,vector<string>employee_department)
+{
+	employe_id.swap(employee_id);
+	employe_name.swap(employee_name);
+	employe_department.swap(employee_department);
+}
+void queuedata::bench_details()
+{
+	int flag = 0;
+	cout << "Enter the employee_id";
+	cin >> emp_id;
+	for (int i = 0; i < employe_id.size(); i++)
+	{
+
+		if (employe_id[i] == emp_id)
+		{
+
+			bench_member.push_back(emp_id);
+			flag++;
+		}
+	}
+	if (flag == 0)
+	{
+		cout << "The id is not available" << endl;
+	}
+	
+}
+void queuedata::display_bench_details()
+{
+	for (int i = 0; i < bench_member.size(); i++)
+	{
+		cout << "The employee in bench" << endl;
+		cout << bench_member[i];
+	}
+}
+
+void queuedata::project_details()
+{
+	int flag = 0;
+	cout << "Enter the employee  in project" << endl;
+	cin >> emp_id;
+	for (int i = 0; i < employe_id.size(); i++)
+	{
+		if (employe_id[i] == emp_id)
+		{
+
+			project_member.push_back(emp_id);
+			flag++;
+		}
+	}
+	if (flag == 0)
+	{
+		cout << "The id not available" << endl;
+	}
+}
+
+void queuedata::display_poject_details()
+{
+	int flag = 0;
+	for (int i = 0; i <project_member.size(); i++)
+	{
+		cout << "The employee id in project" << endl;
+		cout << project_member[i];
+		flag++;
+	}
+	if (flag==0)
+	{
+		cout << "the id not available" << endl;
+	}
+}
+void queuedata::remove_from_project()
+{
+	int add_to_bench;
+	add_to_bench = project_member.front();
+
+	project_member.erase(project_member.begin());
+}
+
+void queuedata::remove_from_bench()
+{
+    
+	add_to_project = bench_member.front();
+	
+	bench_member.erase(bench_member.begin());
+
+}
+
+void queuedata::add_employee_to_project()
+{
+	project_member.push_back(add_to_project);
+}
+void queuedata::add_employee_to_bench()
+{
+	bench_member.push_back(add_to_bench);
+}
+void queuedata::after_insertion_deletion()
+{
+	for (int i = 0; i < project_member.size(); i++)
+	{
+		cout << "The employee in project queue" << endl;
+		cout << project_member[i]<<endl;
+	}
+	for (int i = 0; i < bench_member.size(); i++)
+	{
+		cout << "The employee in bench" <<endl;
+		cout << bench_member[i];
+	}
+}
+
+　
+　organization.h
+ 
+ 
+ 
+ #include<vector>
+
+#include"employee1.h"
+
+#include"queuedata.h"
+
+using namespace std;
+
+class organization
+
+{
+
+public:
+
+	employee1 empobj;
+
+	queuedata queueobj;
+
+public:
+
+	void get_details();
+
+	void display();
+
+	void display_names();
+
+	void highest_pay();
+
+	void sorted_order();
+
+	void update_pay();
+
+		
+
+};
+
+	organization.cpp
+  
+  
+  #include"organization.h"
+
+#include"queuedata.h"
+
+#include<string>
+
+using namespace std;
+
+
+void organization::get_details()
+
+{
+
+	cout << "Enter the employee details" << endl;
+
+	empobj.employee_id.push_back(empobj.id);
+
+	cout << "Enter the employee name:" << endl;
+
+	cin >> empobj.name;
+
+	empobj.employee_name.push_back(empobj.name);
+
+	cout << "Enter the year of joining:" << endl;
+
+	cin >> empobj.joining;
+
+	empobj.integer_validation();
+
+	empobj.year_validation();
+
+	empobj.employee_year_of_joining.push_back(empobj.joining);
+
+	cout << "Enter the emp salary";
+
+	cin >> empobj.salary;
+
+	empobj.integer_validation();
+
+	empobj.employee_salary.push_back(empobj.salary);
+
+	cout << "Enter the department of employee:" << endl;
+
+	cin >> empobj.department;
+
+	empobj.employee_department.push_back(empobj.department);
+
+	queueobj.employee_details(empobj.employee_id,empobj.employee_name,empobj.employee_department);
+
+	empobj.id = empobj.id++;
+
+}
+
+void organization::display()
+
+{
+
+	cout << "The employee details" << endl;
+
+	for (int i = 0; i <empobj.employee_id.size(); i++)
+
+	{
+
+		cout << "EMP";
+
+		cout << empobj.employee_id[i] << endl;;
+
+		cout << "The name of the employee:" << endl;
+
+		cout << empobj.employee_name[i] << endl;
+
+		cout << "The year of joining:" << endl;
+
+		cout <<empobj.employee_year_of_joining[i] << endl;
+
+		cout << "The salary of the employee:" << endl;
+
+		cout << empobj.employee_salary[i] << endl;
+
+		cout << "The emp_department:" << endl;
+
+		cout << empobj.employee_department[i] << endl;
+
+
+　
+
+	}
+
+}
+
+void organization::display_names()
+
+{
+
+	int year,temp_variable=0;
+
+	cout << "Enter the year of joining:" << endl;
+
+	cin >> year;
+
+	year = empobj.integer_validation();
+
+	for (int i = 0; i <(int)empobj.employee_id.size(); i++)
+
+	{
+
+		if (empobj.employee_year_of_joining[i] == year)
+
+		{
+
+			cout<<empobj.employee_name[i] << endl;
+
+			temp_variable++;
+
+		}
+
+	}
+
+	if (temp_variable == 0)
+
+	{
+
+		cout << "the entered year is not available" <<endl;
+
+	}
+
+}
+
+
+void organization::sorted_order()
+
+{
+
+	for (int i = 0; i < empobj.employee_id.size(); i++)
+
+	{
+
+		cout << "The emp_id:" << endl;
+
+		cout << "EMP" << endl;
+
+		cout << empobj.employee_id[i]<<endl;
+
+		cout << "Emp_name:" << endl;
+
+		cout << empobj.employee_name[i] << endl;
+
+		cout << "emp_year_of_joining:" << endl;
+
+		cout << empobj.employee_year_of_joining[i] << endl;
+
+		cout << "emp_salary:" << endl;
+
+		cout << empobj.employee_salary[i] << endl;
+
+		cout << "emp_department:" << endl;
+
+		cout << empobj.employee_department[i]<<endl;
+
+		
+
+	}
+
+}
+
+void::organization::update_pay()
+
+{
+
+	int id,temp_variable=0;
+
+	cout << "Enter the employee id to update pay:" << endl;
+
+	cin >> id;
+
+	for (int i = 0; i <(int)empobj.employee_id.size(); i++)
+
+	{
+
+		if (empobj.employee_id[i] ==id)
+
+		{
+
+			empobj.employee_salary[i] = empobj.employee_salary[i] * 1.05;
+
+			cout << "Updated employee_salary is:" << endl;
+
+			cout << empobj.employee_salary[i];
+
+			temp_variable++;
+
+		}
+
+	}
+
+	if (temp_variable == 0)
+
+	{
+
+		cout << "data not available" << endl;
+
+	}
+
+}
+
+
+void organization::highest_pay()
+
+
+{
+
+	float temp_variable = 0;
+
+	int position = 0,i=0;
+
+	string department;
+
+	cout << "Enter the department of the employee:" << endl;
+
+	cin >> department;
+
+	for ( i = 0; i <(int)empobj.employee_id.size(); i++)
+
+	{
+
+		if (empobj.employee_department[i] == department)
+
+		{
+
+			if (empobj.employee_salary[i]>temp_variable)
+
+			{
+
+				temp_variable = empobj.employee_salary[i];
+
+				position = i;
+
+			}
+
+			else
+
+			{
+
+				temp_variable = i;
+
+				position = temp_variable;
+
+			}
+
+		}
+
+	}
+
+		cout << "the employee id:"<< endl;
+
+		cout << empobj.employee_id[position] << endl;
+
+		cout << "The employee name"<< endl;
+
+		cout << empobj.employee_name[position] << endl;
+
+		cout << "The year of joining:" << endl;
+
+		cout << empobj.employee_year_of_joining[position] << endl;
+
+		cout << "The salary of the employee:" << endl;
+
+		cout << empobj.employee_salary[position] << endl;
+
+		cout << "the department of employee:" << endl;
+
+		cout << empobj.employee_department[position] << endl;
+
+}
+
+
+int main()
+
+{
+
+	employee1 empobj;
+
+	organization orgobj;
+
+	int choice;
+
+
+	while (1)
+
+	{
+
+		cout << "Enter your choice:" << endl;
+
+		cout << "1.get details:" << endl; cout << "2.display details:" << endl; cout << "3.display names regarding joining:" << endl;
+
+		cout << "4.highest pay:" << endl; cout << "5.ascending order" << endl; cout << "6.update pay:" << endl; cout << "7.enter the datas into the queue" << endl;
+
+		cout << "8.queue_operations " << endl; cout << "9.exit" << endl;
+
+		cout << "Enter your choice:" << endl;
+
+		cin >> choice;
+
+		switch (choice)
+
+			{
+
+			case 1:
+
+
+				cout << "get details of the employee:" << endl;
+
+				orgobj.get_details();
+
+				break;
+
+			case 2:
+
+				cout << "display the employee details:" << endl;
+
+				orgobj.display();
+
+				break;
+
+			case 3:
+
+				cout << "Display the names regarding the date_of_joining:" << endl;
+
+				orgobj.display_names();
+
+				break;
+
+			case 4:
+
+				cout << "highest_pay:" << endl;
+
+				orgobj.highest_pay();
+
+				break;
+
+			case 5:
+
+				cout << "ascending_order:" << endl;
+
+				orgobj.sorted_order();
+
+				break;
+
+			case 6:
+
+				cout << "update_the_pay:" << endl;
+
+				orgobj.update_pay();
+
+				break;
+
+			case 7:
+
+				orgobj.queueobj.bench_details();
+
+				orgobj.queueobj.project_details();
+
+				orgobj.queueobj.display_bench_details();				
+
+				orgobj.queueobj.display_poject_details();
+
+				break;
+
+			case 8:
+
+				orgobj.queueobj.remove_from_project();
+
+				orgobj.queueobj.remove_from_bench();
+
+				orgobj.queueobj.add_employee_to_project();
+
+				orgobj.queueobj.add_employee_to_bench();
+
+				orgobj.queueobj.after_insertion_deletion();
+
+				break;
+
+			case 9:
+
+				exit(0);
+
+				break;
+
+			default:
+
+				cout << "THIS IS DEFAULT STATEMENT" << endl;
+
+				break;
+
+			}
+
+		}
+
+		
+
+}
