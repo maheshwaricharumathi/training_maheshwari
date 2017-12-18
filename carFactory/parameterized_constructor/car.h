@@ -11,7 +11,6 @@ public:
 	string model;
 	public:
 	car(string, string, int, string);
-	void get_details();
 	void print_details();
 };
 
