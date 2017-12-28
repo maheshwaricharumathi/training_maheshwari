@@ -1,0 +1,280 @@
+1.
+
+class game
+{
+private:
+string game_name;
+int timming;
+string game_type;
+public:
+void get_detail_of_game();
+void display_detail();
+};
+class players
+{
+private:
+string player_name;
+int player_id;
+string player_roll;
+public:
+void get_player_detail();
+void play();
+}
+class ball
+{
+private:
+int size_of_ball;
+string ball_type;
+public:
+void get_detail();
+};
+main()
+{
+game Game;
+players goalkeeper,fowler,teamleader;
+ball Ball;
+}
+
+
+2.Abstraction
+
+Abstraction means hiding background details and giving relavent data to the user.
+example given below:
+class N_142
+{
+public:
+void call();
+void sms();
+};
+class N_271:public N_142
+{
+public:
+void MP3();
+void FM_Radio();
+void  Camera();
+};
+class B:public N_247
+{
+public:
+void video_recording();
+void read_mail();
+}
+Here,the above example having the common properties as call and sms member function it is declared as public in base class.this class is derived by N_271
+because the base class having the commom member functions.
+
+
+4.Encapsulation
+Wrapping of data and member function into single unit.
+exapmle mobile phone and mobile phone manufacturer
+here the mobile phone having the datas as display camera keypad etc...each data having their function to work as user need..so when the user process the data like camera etc..it will execute
+their corresponding function and produce desire output to user.it will obtained by use of the encapsulation.the user dont have the idea in how its working all those things.
+
+
+
+
+5.
+include <iostream>
+
+using namespace std;
+
+#include<vector>
+
+
+class CustomVector {
+public:
+CustomVector(vector<int> vec)
+{
+
+  //returning the size of the vector
+
+cout<<"size of vector \n"<<vec.size();
+}
+CustomVector(int length)
+{
+    length=length*length;
+    cout<<"Length is\n"<<length;
+}
+CustomVector(vector<int> length,vector<double> elements)
+{
+
+
+  //values of array elements
+  
+  elements.push_back(10);
+  elements.push_back(20);
+  elements.push_back(30);
+  elements.push_back(40);
+  cout<<"\nvector elements\n";
+  cout<<elements[1];
+  cout<<endl;
+  cout<<elements[2];
+  cout<<endl;
+  cout<<elements[3];
+  cout<<endl;
+  cout<<elements.back();
+}
+CustomVector(const CustomVector &vecto)
+{
+
+  //copy constructor displaying the length
+
+    length=vecto.length;
+    cout<<"\nCopy constructor";
+}
+
+
+private: 
+// private data 
+vector< double> elements; 
+int length; 
+vector<int> vec;
+};
+
+int main()
+{
+   
+   CustomVector(vector<int> (4));
+   CustomVector(vector<int>(4),vector<double> (1));
+   CustomVector vecto(9);
+   CustomVector copy=vecto;
+}
+
+b
+example usage
+copy constructor used to copy all the values of all  the  variable from object to another object
+
+c
+The dynamic memory allocates memory on heap and it causes a memory leak when the pointer variable is not freed but vector allocates the object on stack and elements on heap.
+So,it automatically deallocates the memory.The dynamic memory are not  contiguous memory.But vector allocates the contiguous memory.
+
+d 
+The problem can be solved by freeing the memory by using the free method.
+
+e
+#include <iostream>
+
+using namespace std;
+
+#include<vector>
+
+
+class Vecto {
+    public:
+        int& operator[] (int);    
+        
+        // declaring operator function
+        
+        private:
+        int value;
+};
+
+int& Vecto::operator[] (int copy) {  
+
+       // function operator
+
+    std::cout << "Opertor overloading\n";
+    return  value;
+}
+
+int main () {
+    Vecto vec;
+    vec[0]=10;
+   
+       //calling the operator function
+   
+    std::cout << vec[0]+10 << '\n';
+    return 0;
+}
+
+
+6.
+
+
+#include <iostream>
+
+using namespace std;
+ int calculte();
+int main()
+{
+    calculte();
+} 
+int calculte()
+{
+int hour,min,sec=0;
+int minut,secs=0;
+int kilomtr,OffPeakDiscount=0;
+string call;
+int BasicCost=0;
+float MinCharge=59.40;
+float MaxCharge=89.00;
+int VAT=14;
+int FinalCost=0;
+	    
+	cout<<"Enter the time of call in format HH:MM:SS\n";
+	cin>>hour;
+	cin>>min;
+	cin>>sec;
+	cout<<"Enter the duration in HH:MM\n";
+	cin>>minut;
+	cin>>secs;
+	cout<<"Enter the distance\n";
+	cin>>kilomtr;
+	cout<<"Enter the type of call as share call or not as yes or no\n";
+  cin>>call;
+  
+    //calculates the basiccost
+  
+       if(kilomtr<=50)
+       {
+         BasicCost=(minut*60)+secs;
+         
+         //calculate the cost 
+         
+         BasicCost=(BasicCost*0.759)+MinCharge;
+         cout<<"BasicCost"<<BasicCost<<"cents\n";
+       }
+	   else
+	   {
+	       BasicCost=(minut*60)+secs;
+         BasicCost=(BasicCost*1.761)+MaxCharge;
+         cout<<"BasicCost "<<BasicCost<<"cents\n";
+	   }
+	   
+	    //calculates the poffpeakdiscount
+     
+	   if((hour>=19&&hour<=24)&&(hour>=1&&hour<=6))
+	   {
+	       if((min>=0&&min<=59)&&(sec>=0&&sec<=59)&&(kilomtr<=50))
+	       
+	       {
+	               
+	           OffPeakDiscount=(BasicCost*40)/100;
+	           cout<<"OffPeakDiscount"<<OffPeakDiscount<<"cents\n";
+	           FinalCost=((OffPeakDiscount*14)/100)+OffPeakDiscount;
+             cout<<"FinalCost is"<<FinalCost<<"cents";
+	       }
+	   }
+	  
+	   else
+	   {
+	   
+	       OffPeakDiscount=(BasicCost*50)/100;
+	       cout<<"OffPeakDiscount"<<OffPeakDiscount<<"cents\n";
+         FinalCost=((OffPeakDiscount*14)/100)+OffPeakDiscount;
+         cout<<"Final cost is "<<FinalCost<<"cents";
+	           
+	   }   
+	               
+    //checks for share call
+    
+     if((call=="yes")&&(kilomtr>=50))
+         
+     {
+            OffPeakDiscount=(OffPeakDiscount*50)/100;
+	          cout<<"OffPeakDiscount"<<OffPeakDiscount<<"cents\n";
+	          FinalCost=((OffPeakDiscount*14)/100)+OffPeakDiscount;
+            cout<<"final cost is"<<FinalCost<<"cents";
+	   }
+        
+	   
+}
