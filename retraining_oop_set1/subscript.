@@ -1,0 +1,31 @@
+
+
+subscript.h
+pragma once
+#include<iostream>
+using namespace std;
+class Operator_over
+{
+private:
+	int count[10];
+public:
+	int& operator[](int index);
+
+};
+int& Operator_over::operator[](int index)
+{
+	return count[index];
+}
+
+
+
+subscript.cpp
+#include "Operator_Over.h"
+using namespace std;
+void main()
+{
+	Operator_over load;
+	load[2] = 3;
+	cout << load[2];
+	system("pause");
+}
