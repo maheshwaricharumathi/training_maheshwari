@@ -35,7 +35,7 @@ ball Ball;
 }
 
 
-2.2.Abstraction
+2.Abstraction
 Abstraction means hiding background details and giving relavent data to the user. Abstraction hides the implememntation details from user.here the example given below:
 class N_142
 {
@@ -58,7 +58,7 @@ void read_mail();
 }
 the above classes having the features as given above.each features are having the functionality with them.when we are using this features it will run their corresponding implementation function.The implementation is irrelavant to the user.so it is hidden from outside world.
 
-3.4.Encapsulation:
+3.Encapsulation:
 Wrapping of data and member function into single unit.exapmle mobile phone and mobile phone manufacturerhere the mobile phone having the datas as display camera keypad etc...Each data having their function to work as user need..so when the user process the data like camera etc..it will executetheir corresponding function and produce desire output to user.it will obtained by use of the encapsulation.the user dont have the idea in how its working all those things.Mobile manufacturer having their own datas and member function itself as a single unit.
 
 
