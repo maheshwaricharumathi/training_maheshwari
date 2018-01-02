@@ -10,7 +10,7 @@ int calculte()
 {
 int call_hour,minute,seconds=0;
 
-int minut,secs=0;
+int minut,sec=0;
 
 int kilo_meter,off_peak_discount=0;
 
@@ -33,78 +33,39 @@ cin>>seconds;
 cout<<"Enter the call duration in HH:MM\n";
 
 cin>>minut;
-cin>>secs;
+cin>>sec;
 
 cout<<"distance of call\n";
 
 cin>>kilo_meter;
-cout<<"Enter the type of call as share call or not as yes or no\n";
+cout<<"Enter the type of call";
   cin>>call;
  
-//calculates the basiccost
 void basecall()
 {
   if(kilo_meter<=50)
 
 {
-basic_cost=(minut*60)+secs;
- 
-//calculate the cost
- basic_cost=(basic_cost*0.759)+Minimum_charge;
-cout<<"Basic_cost"<<basic_cost<<"cents\n";
- }
-
- else
-  {
-basic_cost=(minut*60)+secs;
-Basic_cost=(basic_cost*1.761)+Maximum_charge;
-cout<<"BasicCost "<<basic_cost<<"cents\n";
+}cout<<"BasicCost "<<basic_cost<<"cents\n";
  }
  }
-//checks for share call
 void share call()
 {
-if((call=="yes")&&(kilo_meter>=50))
+if(kilo_meter>=50))
  
  {
-off_peak_discount=(off_peak_discount*50)/100;
-cout<<"OffPeakDiscount"<<off_peak_discount<<"cents\n";
-final_cost=((off_peak_discount*14)/100)+off_Peak_discount;
 
-cout<<"final cost is"<<final_cost<<"cents";
  }
 }
-  //calculates the poffpeakdiscount
 void peak_discount()
 {
    if((hour>=19&&hour<=24)&&(hour>=1&&hour<=6))
 
   {
 
-    if((minimum>=0&&maximum=59)&&(seconds>=0&&seconds<=59)&&(kilo_meter<=50))
-
-   {
-	               
+                 
 	           
-off_peak_discount=(basic_cost*40)/100;
-cout<<"OffPeakDiscount"<<off_peak_discount<<"cents\n";
-
-final_cost=((off_peak_discount*14)/100)+off_peak_discount;
-cout<<"FinalCost is"<<final-cost<<"cents";
- }
-   }
-   else
-  {
-  off_peak_discount=(basic_cost*50)/100;
-	  
-cout<<"OffPeakDiscount"<<off_peak_discount<<"cents\n";
-
-final_cost=((off_peak-discount*14)/100)+off_peak_discount;
-
-cout<<"Final cost is "<<final_cost<<"cents";
- }
- }
-int main()
+void main()
 
 {
   
