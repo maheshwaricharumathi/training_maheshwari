@@ -28,27 +28,24 @@ int final_cost=0;
 cout<<"Enter the call time in format HH:MM:SS\n";
 
 cin>>call_hour;
-cin>>minute;
-cin>>seconds;
+cin>>call_minute;
+cin>>call_seconds;
 cout<<"Enter the call duration in HH:MM\n";
 
-cin>>minut;
-cin>>sec;
+cin>>call_minut;
+cin>>call_sec;
 
 cout<<"distance of call\n";
 
 cin>>kilo_meter;
 cout<<"Enter the type of call";
   cin>>call;
- 
-void basecall()
+ void basecall()
 {
   if(kilo_meter<=50)
-
 {
-}cout<<"BasicCost "<<basic_cost<<"cents\n";
- }
- }
+}
+}
 void share call()
 {
 if(kilo_meter>=50))
@@ -56,14 +53,10 @@ if(kilo_meter>=50))
  {
 
  }
-}
+
 void peak_discount()
 {
-   if((hour>=19&&hour<=24)&&(hour>=1&&hour<=6))
-
-  {
-
-                 
+   }                 
 	           
 void main()
 
