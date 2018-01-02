@@ -1,73 +1,9 @@
-#include <iostream>
-
-
+#include<iostream>
+#include<string>
 using namespace std;
-
 class telephone
 {
-
-int calculte()
-{
-int call_hour,minute,seconds=0;
-
-int minut,sec=0;
-
-int kilo_meter,off_peak_discount=0;
-
-string call;
-
-int basic_cost=0;
-
-float Mininum_charge=59.40;
-
-float Maximum_charge=89.00;
-
-int VAT=14;
-
-int final_cost=0;
-cout<<"Enter the call time in format HH:MM:SS\n";
-
-cin>>call_hour;
-cin>>call_minute;
-cin>>call_seconds;
-cout<<"Enter the call duration in HH:MM\n";
-
-cin>>call_minut;
-cin>>call_sec;
-
-cout<<"distance of call\n";
-
-cin>>kilo_meter;
-cout<<"Enter the type of call";
-  cin>>call;
- void basecall()
-{
-  if(kilo_meter<=50)
-{
-}
-}
-void share call()
-{
-if(kilo_meter>=50))
- 
- {
-
- }
-
-void peak_discount()
-{
-   }                 
-	           
-void main()
-
-{
-  
-telephone phone;
-phone.calculte();
-phone.basic_cost();
-phone.sharecall();
-phone.peak_discount();
-  
-}
-
-
+public: 
+int call_duration=0;
+float basic_call_cost=0.00; float minimum_tax=59.400; float maximum_tax=89.000; int call_minute=0,call_duration_minute=0,call_hour; int call_seconds=0,call_duration_seconds=0; float final_call_cost=0.00; int distance_kilometer=0; char call_type;  float off_peak_discount=0.00;  int VAT=14;public: void calculate_call_cost(){cout<<"Enter the hour of call"<<endl;cin>>call_hour;cout<<"Enter the minute of call"<<endl;cin>>call_minute;cout<<"Enter the seconds of call"<<endl;cin>>call_seconds;cout<<"Enter the call duration_minute"<<endl;cin>>call_duration_minute;cout<<"Enter the call duration_seconds"<<endl;cin>>call_duration_seconds;cout<<"Enter the distance of call"<<endl;cin>>distance_kilometer;cout<<"Enter the type of call"<<endl;cin>>call_type;
+if(distance_kilometer<=50) { call_duration=(call_duration_minute*60)+call_duration_seconds; basic_call_cost=(call_duration*0.759)+minimum_tax; cout<<"The basic call cost"<<endl; cout<<basic_call_cost; }else  { call_duration=(call_duration_minute*60)+call_duration_seconds; basic_call_cost=(call_duration*1.761)+maximum_tax; cout<<"The basic call cost"<<endl; cout<<basic_call_cost;  } if(call_hour>=19&&call_hour<=24){if(distance_kilometer<=50)   {off_peak_discount=basic_call_cost-(basic_call_cost*40)/100;final_call_cost=(off_peak_discount*VAT)/100+off_peak_discount;cout<<"final_call_cost is"<<endl;cout<<final_call_cost<<endl;   }else// if((call_type=='n')&&(distance_kilometer>50)) {off_peak_discount=basic_call_cost-(basic_call_cost*50)/100;final_call_cost=(off_peak_discount*VAT)/100+off_peak_discount;cout<<"final_call_cost"<<endl;cout<<final_call_cost<<endl; }}if((call_type=='s')&&(distance_kilometer>50))      {off_peak_discount=(off_peak_discount*50)/100;final_call_cost=(off_peak_discount*VAT)/100+off_peak_discount;cout<<"final_call_cost is"<<endl;cout<<final_call_cost<<endl;}}};int main(){telephone object;object.calculate_call_cost();} 
